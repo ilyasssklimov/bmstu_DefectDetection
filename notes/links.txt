@@ -1,1 +1,12 @@
 1. https://sarnold.github.io/cccc/metrics/cccc.html  -- описание некоторых метрик
+2. https://ru.wikibrief.org/wiki/Essential_complexity -- существенная сложность
+3. https://cmapspublic3.ihmc.us/rid=1MHBNM7FD-KJJPM2-16BQ/p1415-mccabe.pdf -- сложность проекта
+4. https://uproger.com/chto-takoe-cziklomaticheskaya-slozhnost-kakie-byvayut-metriki-dlya-izmereniya-slozhnosti-koda-na-primere-python/ -- статья про метрики
+5. https://objectscriptquality.com/docs/metrics/halstead -- Halstead метрики 
+6. https://www.ibm.com/docs/en/rtr/8.0.0?topic=SSSHUF_8.0.0/com.ibm.rational.testrt.studio.doc/topics/csmhalstead.html -- формулы для Halstead метрик
+7. https://habr.com/ru/company/intel/blog/106082/ -- про intelligence (информационное содержание программы)
+8. Комментарии в *.arff -- описание метрик 
+9. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5050670/table/tab2/ -- краткое описание 
+10. https://radon.readthedocs.io/en/latest/intro.html -- про LOC
+11. https://en.wikipedia.org/wiki/Source_lines_of_code -- Wiki про SLOC
+12. https://www.sciencedirect.com/science/article/pii/S209044791400121X -- статья, полные комментарии к метрикам
