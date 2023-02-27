@@ -24,7 +24,7 @@ def prepare_nasa_dataset(filename: str):
                           информационное содержание программы
     10. e               : numeric % Halstead "effort"
                           оценка необходимых усилий
-    11. b               : numeric % Halstead "bug"
+    11. b               : numeric % Halstead "number of delivered bugs"
                           количество предполагаемых ошибок
     12. t               : numeric % Halstead's time estimator
                           время реализации программы
