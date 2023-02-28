@@ -2,7 +2,7 @@ import pandas as pd
 from scipy.io import arff
 
 
-def prepare_nasa_dataset(filename: str):
+def prepare_nasa_dataset(filename: str) -> tuple[pd.DataFrame, pd.Series]:
     """
     1. loc              : numeric % McCabe's line count of code
                           количество всех непустых строк исходного кода без комментариев (PLOC)
@@ -52,4 +52,23 @@ def prepare_nasa_dataset(filename: str):
     dataset = arff.loadarff(filename)
     df = pd.DataFrame(dataset[0])
 
-    return df
+    target_name = 'defects'
+    features: pd.DataFrame = df.loc[1:, df.columns != target_name].dropna()
+    target: pd.Series = df[target_name].astype(bool)
+
+    # TODO: заменить на типы numpy
+    features = features.astype({
+        'loc': int,
+        'n': int,
+        'lOCode': int,
+        'lOComment': int,
+        'lOBlank': int,
+        'locCodeAndComment': int,
+        'uniq_Op': int,
+        'uniq_Opnd': int,
+        'total_Op': int,
+        'total_Opnd': int,
+        'branchCount': int,
+    })
+    
+    return features, target
