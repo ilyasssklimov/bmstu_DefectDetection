@@ -3,12 +3,16 @@ import re
 
 
 class MetricsCppCode:
-    def __init__(self, function: str):
-        self.__src = function
+    def __init__(self, function_code: str = ''):
+        self.__src = function_code
+        self.__code_lines = self.__delete_blank_and_comments()
+
+    def set_function_code(self, function_code: str):
+        self.__src = function_code
         self.__code_lines = self.__delete_blank_and_comments()
 
     @staticmethod
-    def __split_code_by_lines(code: str) -> list[str]:
+    def split_code_by_lines(code: str) -> list[str]:
         return re.split(r'\n(?=[^"]*(?:"[^"]*"[^"]*)*$)', code)
 
     @staticmethod
@@ -17,13 +21,13 @@ class MetricsCppCode:
 
     def __delete_blank_and_comments(self):
         clean_code = re.sub(self.__get_re_for_comments(), '', self.__src)
-        code_lines = self.__split_code_by_lines(clean_code)
+        code_lines = self.split_code_by_lines(clean_code)
         return [line.strip() for line in code_lines if line.strip()]
 
-    def count(self) -> dict[str, int]:
+    def count(self) -> dict[str, int | float]:
         return {
-            'LOC': self.count_loc(),
-            'vg': self.count_vg(),
+            'loc': self.count_loc(),
+            'v(g)': self.count_vg(),
             **self.count_n_metrics(),
             **self.count_halsted_loc_metrics()
         }
@@ -149,41 +153,41 @@ class MetricsCppCode:
 
         # Необходимые значения метрик
         N = N1 + N2
-        V = N * math.log2(n1 + n2)
-        D = (n1 / 2) * (N2 / n2)
-        I = V / D
+        V = N * math.log2(n1 + n2) if n1 != 0 or n2 != 0 else 0.
+        D = (n1 / 2) * (N2 / n2) if n2 != 0 else 0.
+        I = V / D if D != 0. else 0.
         E = V * D
         B = V / 3000
         T = E / 18
 
         return {
-            'N': N,
-            'V': round(V, 2),
-            'D': round(D, 2),
-            'I': round(I, 2),
-            'E': round(E, 2),
-            'B': round(B, 2),
-            'T': round(T, 2),
+            'n': N,
+            'v': round(V, 2),
+            'd': round(D, 2),
+            'i': round(I, 2),
+            'e': round(E, 2),
+            'b': round(B, 2),
+            't': round(T, 2),
             'uniq_Op': n1,
             'uniq_Opnd': n2,
             'total_Op': N1,
             'total_Opnd': N2,
         }
 
-    def count_halsted_loc_metrics(self):
-        code_lines = self.__split_code_by_lines(self.__src)
+    def count_halsted_loc_metrics(self) -> dict[str, int]:
+        code_lines = self.split_code_by_lines(self.__src)
         blank_lines = [line for line in code_lines if not line.strip()]
 
         comment_lines = re.findall(self.__get_re_for_comments(), self.__src)
         comment_lines = [next(filter(None, line)) for line in comment_lines]
-        comment_lines = [len(self.__split_code_by_lines(line)) for line in comment_lines]
+        comment_lines = [len(self.split_code_by_lines(line)) for line in comment_lines]
 
         mixed_lines = re.findall(r';\s*//', self.__src)
 
         return {
-            'loCode': len(code_lines),
-            'loComment': sum(comment_lines),
-            'loBlank': len(blank_lines),
+            'lOCode': len(code_lines),
+            'lOComment': sum(comment_lines),
+            'lOBlank': len(blank_lines),
             'lOCodeAndComment': len(mixed_lines),
         }
 
