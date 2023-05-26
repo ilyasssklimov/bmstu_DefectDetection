@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-19T02:51:58.435Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0" etag="SyxL-oXShkqPm2DGVfmt" version="21.3.2" type="device" pages="4">
+<mxfile host="app.diagrams.net" modified="2023-05-21T11:09:46.843Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0" etag="8yU2INMj_cR5zlCtGoKD" version="21.3.2" type="device" pages="4">
   <diagram name="decision_tree" id="0pX78puNYP0HOyACpwhE">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -99,13 +99,13 @@
         <mxCell id="4ZvhxgYkxoARXMKD66MN-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Начало&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="253.5" y="10" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UMby3E8lUzEteQOqqsK6-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4ZvhxgYkxoARXMKD66MN-8" target="CHNLshs0-NTEpBVreIW_-1">
+        <mxCell id="UMby3E8lUzEteQOqqsK6-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4ZvhxgYkxoARXMKD66MN-8" target="CHNLshs0-NTEpBVreIW_-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="4ZvhxgYkxoARXMKD66MN-8" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Посчитать антиградиент логарифмической функции потерь&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="255.75" y="610" width="166" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="UMby3E8lUzEteQOqqsK6-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4ZvhxgYkxoARXMKD66MN-10" target="4ZvhxgYkxoARXMKD66MN-8">
+        <mxCell id="UMby3E8lUzEteQOqqsK6-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4ZvhxgYkxoARXMKD66MN-10" target="4ZvhxgYkxoARXMKD66MN-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="4ZvhxgYkxoARXMKD66MN-10" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;А&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Пока количество деревьев меньше максимального&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="shape=loopLimit;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -120,11 +120,8 @@
         <mxCell id="4ZvhxgYkxoARXMKD66MN-13" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;А&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="4ZvhxgYkxoARXMKD66MN-11" vertex="1">
           <mxGeometry x="50" y="20" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FFdXw0pOtusKrfCa7lVX-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4ZvhxgYkxoARXMKD66MN-15" target="GCfFAQx6YSg5iRharVBc-2">
+        <mxCell id="FFdXw0pOtusKrfCa7lVX-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4kOR6J4_KbmtP3caaL7t-1" target="GCfFAQx6YSg5iRharVBc-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="4ZvhxgYkxoARXMKD66MN-15" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Построить дерево, указав антиградиент в качестве целевой переменной&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="495.25" y="140" width="166" height="70" as="geometry" />
         </mxCell>
         <mxCell id="4ZvhxgYkxoARXMKD66MN-17" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Конец&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" parent="1" vertex="1">
           <mxGeometry x="494" y="620" width="170" height="70" as="geometry" />
@@ -150,23 +147,26 @@
         <mxCell id="CHNLshs0-NTEpBVreIW_-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;А&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="313.75" y="730" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="FFdXw0pOtusKrfCa7lVX-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CHNLshs0-NTEpBVreIW_-3" target="4ZvhxgYkxoARXMKD66MN-15">
+        <mxCell id="FFdXw0pOtusKrfCa7lVX-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="CHNLshs0-NTEpBVreIW_-3" target="4kOR6J4_KbmtP3caaL7t-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="CHNLshs0-NTEpBVreIW_-3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;А&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="553.5" y="40" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Xe3Ss5TXzLZqpl3eGrU3-1" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Обучить первое дерево решений на входных данных&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="Xe3Ss5TXzLZqpl3eGrU3-1" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Построить первое дерево решений на входных данных&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="255.25" y="250" width="166.5" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="LLvE-jgK5e_X8k2gZalW-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LLvE-jgK5e_X8k2gZalW-1" target="4ZvhxgYkxoARXMKD66MN-10">
+        <mxCell id="LLvE-jgK5e_X8k2gZalW-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="LLvE-jgK5e_X8k2gZalW-1" target="4ZvhxgYkxoARXMKD66MN-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="LLvE-jgK5e_X8k2gZalW-1" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Добавить первое&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;дерево в модель с учетом темпа обучения&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="LLvE-jgK5e_X8k2gZalW-1" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Добавить первое&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;дерево в модель с учетом темпа обучения&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="255.75" y="370" width="166" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="LLvE-jgK5e_X8k2gZalW-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4ZvhxgYkxoARXMKD66MN-12" target="VdC9vbDQb3ArTIagJyyr-2">
+        <mxCell id="LLvE-jgK5e_X8k2gZalW-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4ZvhxgYkxoARXMKD66MN-12" target="VdC9vbDQb3ArTIagJyyr-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4kOR6J4_KbmtP3caaL7t-1" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Построить дерево решений с целевой&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;переменной - антиградиентом&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="496.63" y="140" width="164.75" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
