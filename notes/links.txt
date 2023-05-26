@@ -10,3 +10,4 @@
 10. https://radon.readthedocs.io/en/latest/intro.html -- про LOC
 11. https://en.wikipedia.org/wiki/Source_lines_of_code -- Wiki про SLOC
 12. https://www.sciencedirect.com/science/article/pii/S209044791400121X -- статья, полные комментарии к метрикам
+13. http://www.mccabe.com/pdf/mccabe-nist235r.pdf -- статья Маккейба

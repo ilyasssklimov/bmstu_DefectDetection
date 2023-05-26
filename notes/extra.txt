@@ -1,0 +1,8 @@
+3. ev(g)        : numeric % McCabe "essential complexity"
+                  существенная сложность
+4. iv(g)        : numeric % McCabe "design complexity"
+                  сложность проекта
+7. l            : numeric % Halstead "program length"
+                  длина программы (размер программы только с операторами и операндами)
+21: branchCount : numeric % branch count of the flow graph
+                  количество ветвей потокового графа
