@@ -1,12 +1,12 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
-from random import randint, choice
+from random import choice
 from src.model.model import GBDDModel
 from src.processing.metircs import MetricsCppCode
 from time import time
 
-REPEAT_TIMES = 30
+REPEAT_TIMES = 10
 
 
 def generate_line(operators_cnt: int) -> str:
@@ -20,7 +20,7 @@ def generate_code(lines_cnt: int) -> str:
     code = 'void foo() {\n'
 
     for i in range(lines_cnt):
-        code += generate_line(randint(1, 5))
+        code += generate_line(4)
 
     return code + '}\n'
 
