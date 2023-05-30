@@ -1,15 +1,9 @@
 #include <iostream>
 
 
-void foo() {
-    int a = 1;
-    int b = 2;
-    int c = a + b;
-    c *= 2;
-
+void foo(int c) {
     if (c > 2) {
         std::cout << "c more than 2" << std::endl
-        return;
     } else {
         std::cout<< "c less than 2" << std::endl;
     }
@@ -26,11 +20,9 @@ int boo() {
 
 
 int main() {
-    foo();
+    foo(c);
     int result = boo();
+    std::cout << result;
 
-    if (result > 0)
-        return 0;
-    else
-        return -1;
+    return 0;
 }
