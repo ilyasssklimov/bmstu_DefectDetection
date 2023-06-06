@@ -52,7 +52,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
         if filename:
             try:
-                with open(filename, 'r') as file:
+                with open(filename, 'r', encoding='utf8') as file:
                     self.program_txt.setPlainText(file.read())
                     QMessageBox.information(self, 'Предупреждение', 'Обратите внимание, что анализироваться будут '
                                                                     'функции, содержащие не более 2000 строк')
@@ -65,7 +65,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
     def __split_code_by_functions(self) -> list[tuple[int, int, str]]:
         text_program = self.program_txt.toPlainText()
-        func_pattern = r'\w+\s+\w+\(.*\)\s*{([^{}]|{([^{}]|{([^{}]|{([^{}]|{[^{}]})*})*})*})*}'
+        func_pattern = r'[\w\*]+\s+\w+\(.*\)\s*{([^{}]|{([^{}]|{([^{}]|{([^{}]|{[^{}]})*})*})*})*}'
         func_matches = re.finditer(func_pattern, text_program)
         functions: list[tuple[int, int, str]] = []
 
@@ -80,14 +80,10 @@ class Window(QMainWindow, Ui_MainWindow):
         functions = self.__split_code_by_functions()
         self.__highlighter.clear()
 
-        print('start=====')
         for function in functions:
             self.__metrics.set_function_code(function[2])
             metrics = self.__metrics.count()
             defects_proba = self.__model.predict_proba(pd.DataFrame(metrics, index=[0]))[0][1]
-            # defects_proba = defects_proba * 0.5 if defects_proba > 0.5 else defects_proba * 1.5
-            print(defects_proba)
-            print(metrics)
 
             if 0. <= defects_proba < 0.2:
                 color = 'lightBlue'

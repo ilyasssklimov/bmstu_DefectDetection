@@ -47,18 +47,19 @@ class GBDDModel:
         self.__model.fit(X_train, y_train, eval_set=[(X_train, y_train), (X_test, y_test)])
         self.__model.predict(X_test)
 
-        y_prob = self.__model.predict_proba(X_test)
-        for i in [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6]:
-            y_pred = np.where(y_prob[:, 1] > i, 1, 0)
-            print(i, get_statistics(y_test, y_pred))
+        y_pred = self.__model.predict(X_test)
+        print(get_statistics(y_test, y_pred))
+        columns = ['loc', 'v(g)', 'n', 'v', 'd', 'i', 'e', 'b', 't', 'lOCode', 'lOComment',
+                   'lOBlank', 'locCodeAndComment', 'uniq_Op', 'uniq_Opnd', 'total_Op', 'total_Opnd']
+        for feature, importance in zip(columns, self.__model.feature_importances_):
+            print(f'{feature}: {importance}')
 
         results = self.__model.evals_result()
-
         matplotlib.use('Qt5Agg')
-        plt.plot(results['validation_0']['logloss'], label='train')
-        plt.plot(results['validation_1']['logloss'], label='test')
-        plt.legend()
-        # plt.show()
+        plt.plot(results['validation_1']['logloss'])
+        plt.xlabel('Итерация')
+        plt.ylabel('Функция потерь')
+        plt.show()
 
     def fit(self, X_train: pd.DataFrame, y_train: pd.DataFrame):
         self.__model.fit(X_train, y_train)
@@ -74,7 +75,6 @@ class GBDDModel:
 
     def predict(self, X_test: pd.DataFrame) -> list[float]:
         model = self.__read_model()
-        # pd.DataFrame(model.predict_proba(X_test)).to_csv('test2.txt')
         return model.predict(X_test)
 
     def predict_proba(self, X_test: pd.DataFrame) -> list[list[float]]:
@@ -89,18 +89,3 @@ def get_statistics(y_test: pd.DataFrame, y_pred: np.array):
         'recall': round(recall_score(y_test, y_pred), 3),
         'F-measure': round(f1_score(y_test, y_pred), 3)
     }
-
-
-def main():
-    dataset = PromiseDataset(r'..\..\data\promise')
-    X_train, X_test, y_train, y_test = dataset.prepare()
-
-    model = GBDDModel()
-    # model.grid_search(X_train, y_train)
-    model.debug_fit(X_train, y_train, X_test, y_test)
-    model.fit(X_train, y_train)
-    # print(get_statistics(y_test, model.predict(X_test)))
-
-
-if __name__ == '__main__':
-    main()
