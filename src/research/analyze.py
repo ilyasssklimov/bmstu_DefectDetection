@@ -1,28 +1,12 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
-from random import choice
 from src.model.model import GBDDModel
 from src.processing.metircs import MetricsCppCode
+from src.research.utils import generate_code
 from time import time
 
 REPEAT_TIMES = 10
-
-
-def generate_line(operators_cnt: int) -> str:
-    operators = ['+', '-', '*', '/', '=', '<', '>', 'if', '&&', '||']
-    operands = ['a', 'b', 'c', 'd', '1', '2', '3', '4']
-    line = [f'{choice(operands)} {choice(operators)}' for _ in range(operators_cnt)]
-    return ' '.join(line) + f' {choice(operands)}\n'
-
-
-def generate_code(lines_cnt: int) -> str:
-    code = 'void foo() {\n'
-
-    for i in range(lines_cnt):
-        code += generate_line(4)
-
-    return code + '}\n'
 
 
 def count_time(metrics: MetricsCppCode, model: GBDDModel, function: str) -> float:
@@ -41,7 +25,7 @@ def count_time(metrics: MetricsCppCode, model: GBDDModel, function: str) -> floa
 
 def main():
     metrics = MetricsCppCode()
-    model = GBDDModel(model_file='./model.pkl')
+    model = GBDDModel(model_file='../app/model.pkl')
     times: list[float] = []
 
     for lines_cnt in range(0, 2000, 20):
