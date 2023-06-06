@@ -133,3 +133,5 @@ dmypy.json
 test.py
 ~*
 *.mp4
+full
+pages
