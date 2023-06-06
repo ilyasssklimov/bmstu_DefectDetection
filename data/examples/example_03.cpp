@@ -91,7 +91,6 @@ int* koo(int idx, std::string filename) {
 
     create_file(name);
 
-    std::cout << "max = " << max << std::endl;
     // Неизвестно, присутствует ли формат в названии
     open_file(filename + ".txt");
 
